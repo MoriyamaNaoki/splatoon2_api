@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="splatoon2_API" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PLP-Qd-3sd">
+                                <rect key="frame" x="0.0" y="110" width="414" height="488"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="result" rowHeight="78" id="Fel-fp-QaK" customClass="resultTableViewCell" customModule="splatoon2_API" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="78"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fel-fp-QaK" id="ws4-sf-xSB">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="77.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="KsY-WT-qcm"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="JrV-7a-WBN"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wI9-Us-jCv">
+                                <rect key="frame" x="194" y="642" width="188" height="74"/>
+                                <color key="backgroundColor" red="0.40240022289999999" green="0.95249140710000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="t23-hj-OKp"/>
+                                </constraints>
+                                <state key="normal" title="更新">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="result_reload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ojj-GC-LIE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjA-Ul-zdQ">
+                                <rect key="frame" x="36" y="642" width="89" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ステージ"/>
+                                <connections>
+                                    <segue destination="hbe-7a-ueI" kind="show" id="ple-U6-Zli"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wI9-Us-jCv" firstAttribute="top" secondItem="PLP-Qd-3sd" secondAttribute="bottom" constant="27" id="3vr-z2-bsf"/>
+                            <constraint firstItem="PLP-Qd-3sd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5ts-dH-pCm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wI9-Us-jCv" secondAttribute="bottom" constant="37" id="6tg-ai-BDu"/>
+                            <constraint firstItem="PLP-Qd-3sd" firstAttribute="centerX" secondItem="wI9-Us-jCv" secondAttribute="centerX" id="OHj-1L-zCb"/>
+                            <constraint firstItem="PLP-Qd-3sd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="nu8-rX-g1f"/>
+                            <constraint firstAttribute="trailing" secondItem="PLP-Qd-3sd" secondAttribute="trailing" id="nvH-0G-CqL"/>
+                            <constraint firstItem="wI9-Us-jCv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="113" id="yNc-FI-WIM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="resultTable" destination="PLP-Qd-3sd" id="8AR-Va-hoF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="85.59782608695653"/>
+        </scene>
+        <!--Schedule View Controller-->
+        <scene sceneID="mDV-D5-ALq">
+            <objects>
+                <viewController id="hbe-7a-ueI" customClass="scheduleViewController" customModule="splatoon2_API" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EnJ-Hm-IV1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d2U-Pm-cqn">
+                                <rect key="frame" x="0.0" y="58" width="414" height="575"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Identifier" rowHeight="573" id="xIL-hw-Iol" customClass="scheduleTableViewCell" customModule="splatoon2_API" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="573"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xIL-hw-Iol" id="Guj-3c-hyW">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="572.66666666666663"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="hbe-7a-ueI" id="qF6-PF-YgA"/>
+                                    <outlet property="delegate" destination="hbe-7a-ueI" id="ZSt-Li-Wq1"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKn-W7-9WA">
+                                <rect key="frame" x="301" y="641" width="81" height="75"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="c9u-M9-CfM"/>
+                                </constraints>
+                                <state key="normal" image="update">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="schedule_reload:" destination="hbe-7a-ueI" eventType="touchUpInside" id="V8d-Er-i7n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="d2U-Pm-cqn" firstAttribute="leading" secondItem="EnJ-Hm-IV1" secondAttribute="leading" id="7yx-Nn-N2Z"/>
+                            <constraint firstAttribute="bottom" secondItem="AKn-W7-9WA" secondAttribute="bottom" constant="20" symbolic="YES" id="DNp-Jh-PUJ"/>
+                            <constraint firstAttribute="trailing" secondItem="d2U-Pm-cqn" secondAttribute="trailing" id="JFC-tO-U9P"/>
+                            <constraint firstItem="d2U-Pm-cqn" firstAttribute="top" secondItem="vWJ-Mq-kWu" secondAttribute="top" constant="38" id="OLg-42-uXQ"/>
+                            <constraint firstItem="vWJ-Mq-kWu" firstAttribute="trailing" secondItem="AKn-W7-9WA" secondAttribute="trailing" constant="32" id="S8H-FH-GUj"/>
+                            <constraint firstItem="AKn-W7-9WA" firstAttribute="leading" secondItem="vWJ-Mq-kWu" secondAttribute="leading" constant="301" id="U6s-Jp-YQk"/>
+                            <constraint firstItem="AKn-W7-9WA" firstAttribute="top" secondItem="d2U-Pm-cqn" secondAttribute="bottom" constant="8" symbolic="YES" id="Xd6-tO-d65"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vWJ-Mq-kWu"/>
+                    </view>
+                    <connections>
+                        <outlet property="schedule_table" destination="d2U-Pm-cqn" id="b8a-ae-Mf7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aod-Wy-Czv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="898.55072463768124" y="85.59782608695653"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="update" width="512" height="512"/>
+    </resources>
+</document>
